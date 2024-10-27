@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:news/core/widgets/custom_button.dart';
 import 'package:news/core/widgets/custom_field.dart';
+import 'package:news/feature/auth/register/presentation/views/register_screen.dart';
 
 class LoginForm extends StatelessWidget {
   final TextEditingController userNameController = TextEditingController();
@@ -24,9 +26,21 @@ class LoginForm extends StatelessWidget {
         SizedBox(height: 9,),
         Row(
           children: [
+Text("Forget the Password?",
+textAlign: TextAlign.right,),
+            CustomButton(onPressed: (){
 
+            },
+                ButtonTitle: "Login"),
+            CustomButton(onPressed: (){
+Navigator.push(context, MaterialPageRoute(builder: (context) {
+  return RegisterScreen();
+},));
+            },
+                ButtonTitle: "Sign Up")
           ],
-        )
+        ),
+
       ],
     );
   }
